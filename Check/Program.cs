@@ -3,6 +3,7 @@ using System;
 using static ProgrammingPatterns.ChainOfResposibilityExample;
 using static ProgrammingPatterns.FactoryExample;
 using static ProgrammingPatterns.StrategyExample;
+using static ProgrammingPatterns.TemplateExample;
 
 namespace Check
 {
@@ -56,6 +57,15 @@ namespace Check
             contextA.DoIt();
             Console.WriteLine();
             contextB.DoIt();
+
+            Console.WriteLine("\nStrategy:");
+
+            var typicalCowboyEntry = new TypicalCowboyEnterSaloon();
+            var dumbassCowboyEntry = new DumbassCowboyEnterSaloon();
+
+            typicalCowboyEntry.EnterSaloon();
+            Console.WriteLine();
+            dumbassCowboyEntry.EnterSaloon();
         }
     }
 }

@@ -15,6 +15,7 @@ namespace ProgrammingPatterns
                 WalkIn();
                 ActionB();
                 SitDown();
+                ActionC();
                 HookA();
             }
 
@@ -29,6 +30,47 @@ namespace ProgrammingPatterns
             protected abstract void ActionC();
 
             protected virtual void HookA() { }
+        }
+
+        public class TypicalCowboyEnterSaloon : EnterSaloonAbstractBehaviour
+        {
+            protected override void ActionA()
+            {
+                Console.WriteLine("Saying hello to everyone"); ;
+            }
+
+            protected override void ActionB()
+            {
+                Console.WriteLine("Asking for a drink");
+            }
+
+            protected override void ActionC()
+            {
+                Console.WriteLine("Shoting a drink");
+            }
+        }
+
+        public class DumbassCowboyEnterSaloon : EnterSaloonAbstractBehaviour
+        {
+            protected override void ActionA()
+            {
+                Console.WriteLine("Asking everyone who is gay here");
+            }
+
+            protected override void ActionB()
+            {
+                Console.WriteLine("Kicking chair");
+            }
+
+            protected override void ActionC()
+            {
+                Console.WriteLine("Getting hit by axe");
+            }
+
+            protected override void HookA()
+            {
+                Console.WriteLine("Fall down on the floor");
+            }
         }
     }
 }
